@@ -1,0 +1,26 @@
+{
+  "name": "cinerest",
+  "version": "1.0.0",
+  "description": "Movie API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grawk/cinerest.git"
+  },
+  "keywords": [
+    "Movie",
+    "API"
+  ],
+  "author": "Matt Edelman <mattedelman@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grawk/cinerest/issues"
+  },
+  "homepage": "https://github.com/grawk/cinerest#readme",
+  "dependencies": {
+    "mongoose": "^4.2.3"
+  }
+}
