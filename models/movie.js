@@ -16,7 +16,8 @@
  * A model for our movie
  */
 var path = require('path');
-var mongoose = require(path.resolve(__dirname, '..', 'lib', 'database'));
+var db = require(path.resolve(__dirname, '..', 'lib', 'database'));
+var mongoose = db.mongoose;
 
 var movieModel = function () {
 
@@ -31,7 +32,6 @@ var movieModel = function () {
         var movie = this;
 
         // any validation?
-        console.log('presave');
         //Continue with the save operation
         next();
     });

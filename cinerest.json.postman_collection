@@ -1,0 +1,87 @@
+{
+	"id": "0273c213-96d6-8958-3d4f-17bb6538d497",
+	"name": "cinerest",
+	"description": "cinerest API",
+	"order": [],
+	"folders": [
+		{
+			"id": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1",
+			"name": "movies",
+			"description": "movies endpoints",
+			"order": [
+				"246dabad-1c5b-4055-ea53-735cf9ff454e",
+				"c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
+				"4f0ee776-ce73-6717-ceae-7f20989c5e01"
+			],
+			"owner": 0
+		}
+	],
+	"timestamp": 1446399584268,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "246dabad-1c5b-4055-ea53-735cf9ff454e",
+			"headers": "",
+			"url": "{{baseUrl}}/movies",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446400913767,
+			"name": "http://localhost:8003/api/movies",
+			"description": "get all movies",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": []
+		},
+		{
+			"id": "4f0ee776-ce73-6717-ceae-7f20989c5e01",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{baseUrl}}/movies/56366718fa0a9sdfafadsffc0090a4c33",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"data": [],
+			"dataMode": "raw",
+			"name": "{{baseUrl}}/movies/56366718fa0a9sdfafadsffc0090a4c33",
+			"description": "update a single movie",
+			"descriptionFormat": "html",
+			"time": 1446407757793,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1",
+			"rawModeData": "{\n  \"name\": \"Foo\"\n  }"
+		},
+		{
+			"id": "c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
+			"headers": "",
+			"url": "{{baseUrl}}/movies/56366718fa0a9fc0090a4c33",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"data": [],
+			"dataMode": "params",
+			"name": "{{baseUrl}}/movies/56366718fa0a9fc0090a4c33",
+			"description": "get a single movie",
+			"descriptionFormat": "html",
+			"time": 1446406820903,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1"
+		}
+	]
+}

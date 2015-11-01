@@ -1,4 +1,6 @@
 'use strict';
+var path = require('path');
+var movieModel = require(path.resolve(__dirname, '../../models/movie'));
 
 /**
  * Operations on /movies/{id}
@@ -11,7 +13,11 @@ module.exports = {
      * produces: 
      */
     get: function findMovieById(req, res) {
-        res.sendStatus(501);
+        var id = req.params.id;
+        movieModel.find({_id: id}, function (err, movie) {
+            res.status(200).json(movie);
+        });
+
     }, 
     
     /**
@@ -19,7 +25,7 @@ module.exports = {
      * parameters: movie
      * produces: 
      */
-    post: function editMovie(req, res) {
+    put: function editMovie(req, res) {
         res.sendStatus(501);
     }, 
     
