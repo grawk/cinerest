@@ -28,10 +28,7 @@
           "200": {
             "description": "movie response",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Movie"
-              }
+              "$ref": "#/definitions/MovieList"
             },
             "headers": {
               "x-expires": {
@@ -162,17 +159,47 @@
     }
   },
   "definitions": {
-    
+    "MovieList": {
+      "type": "object",
+
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Movie"
+          }
+        }
+      }
+    },
     "Movie": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/NewMovie"
+        },
+        {
+          "required": [
+            "id"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "NewMovie": {
       "type": "object",
       "required": [
         "name"
       ],
       "properties": {
         "name": {
-          "type": "string"
-        },
-        "tag": {
           "type": "string"
         }
       }

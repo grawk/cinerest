@@ -9,11 +9,14 @@
 			"name": "movies",
 			"description": "movies endpoints",
 			"order": [
+				"3a8dcc9d-e991-3a98-fd92-f0da5f6e5787",
 				"246dabad-1c5b-4055-ea53-735cf9ff454e",
 				"c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
-				"4f0ee776-ce73-6717-ceae-7f20989c5e01"
+				"4f0ee776-ce73-6717-ceae-7f20989c5e01",
+				"e35a4e85-59b2-4c16-ce21-ad1c42bd8ad6"
 			],
-			"owner": 0
+			"owner": 0,
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497"
 		}
 	],
 	"timestamp": 1446399584268,
@@ -24,64 +27,121 @@
 		{
 			"id": "246dabad-1c5b-4055-ea53-735cf9ff454e",
 			"headers": "",
-			"url": "{{baseUrl}}/movies",
+			"url": "{{baseUrl}}/movies?page=2",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
-			"data": [],
+			"data": [
+				{
+					"key": "movie",
+					"value": "Hard Day's Night",
+					"type": "text",
+					"enabled": true
+				}
+			],
 			"dataMode": "params",
 			"version": 2,
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1446400913767,
-			"name": "http://localhost:8003/api/movies",
-			"description": "get all movies",
+			"time": 1446441483198,
+			"name": "{{baseUrl}}/movies?page=2",
+			"description": "get specific page of movie results",
 			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
 			"responses": []
 		},
 		{
-			"id": "4f0ee776-ce73-6717-ceae-7f20989c5e01",
-			"headers": "Content-Type: application/json\n",
-			"url": "{{baseUrl}}/movies/56366718fa0a9sdfafadsffc0090a4c33",
-			"pathVariables": {},
+			"id": "3a8dcc9d-e991-3a98-fd92-f0da5f6e5787",
+			"headers": "",
+			"url": "{{baseUrl}}/movies?page=2",
 			"preRequestScript": "",
-			"method": "PUT",
-			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
-			"data": [],
-			"dataMode": "raw",
-			"name": "{{baseUrl}}/movies/56366718fa0a9sdfafadsffc0090a4c33",
-			"description": "update a single movie",
-			"descriptionFormat": "html",
-			"time": 1446407757793,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "movie",
+					"value": "Hard Day's Night",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
 			"version": 2,
-			"responses": [],
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"folder": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1",
+			"time": 1446441483198,
+			"name": "{{baseUrl}}/movies",
+			"description": "get default page of movie results",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": [],
+			"folder": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1"
+		},
+		{
+			"id": "4f0ee776-ce73-6717-ceae-7f20989c5e01",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{baseUrl}}/movies/{{existingMovieId}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446441759217,
+			"name": "{{baseUrl}}/movies/{{existingMovieId}}",
+			"description": "update a single movie",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": [],
 			"rawModeData": "{\n  \"name\": \"Foo\"\n  }"
 		},
 		{
 			"id": "c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
 			"headers": "",
-			"url": "{{baseUrl}}/movies/56366718fa0a9fc0090a4c33",
-			"pathVariables": {},
+			"url": "{{baseUrl}}/movies/{{existingMovieId}}",
 			"preRequestScript": "",
+			"pathVariables": {},
 			"method": "GET",
-			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
-			"data": [],
+			"data": [
+				{
+					"key": "movie",
+					"value": "Hard Day's Night",
+					"type": "text",
+					"enabled": true
+				}
+			],
 			"dataMode": "params",
-			"name": "{{baseUrl}}/movies/56366718fa0a9fc0090a4c33",
-			"description": "get a single movie",
-			"descriptionFormat": "html",
-			"time": 1446406820903,
 			"version": 2,
-			"responses": [],
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"folder": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1"
+			"time": 1446442791753,
+			"name": "{{baseUrl}}/movies/{{existingMovieId}}",
+			"description": "get a single movie",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": []
+		},
+		{
+			"id": "e35a4e85-59b2-4c16-ce21-ad1c42bd8ad6",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{baseUrl}}/movies",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446442777424,
+			"name": "{{baseUrl}}/movies",
+			"description": "POST new movie",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": [],
+			"rawModeData": "{\n  \"name\": \"The Last of the Mocha Latte\"\n}"
 		}
 	]
 }
