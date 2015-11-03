@@ -1,7 +1,6 @@
 'use strict';
 var path = require('path');
 var movieModel = require(path.resolve(__dirname, '../../models/movie'));
-
 /**
  * Operations on /movies/{id}
  */
@@ -26,7 +25,14 @@ module.exports = {
      * produces: 
      */
     put: function editMovie(req, res) {
-        res.sendStatus(501);
+        var id = req.params.id;
+        var name = req.body.name;
+        movieModel.update({_id: id}, {$set: {name: name}}, function (err, result) {
+            if (err) {
+                return res.status(500).json({name: err.name, message: err.message});
+            }
+            res.status(200).json({numberModified: result.nModified});
+        });
     }, 
     
     /**
@@ -35,7 +41,13 @@ module.exports = {
      * produces: 
      */
     delete: function deleteMovie(req, res) {
-        res.sendStatus(501);
+        var id = req.params.id;
+        movieModel.remove({_id: id}, function(err, result) {
+            if (err) {
+                return res.status(500).json({name: err.name, message: err.message});
+            }
+            res.status(204).json({numberModified: result.result.n});
+        });
     }
     
 };
