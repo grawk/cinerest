@@ -164,7 +164,6 @@
   "definitions": {
     "MovieList": {
       "type": "object",
-
       "properties": {
         "page": {
           "type": "integer",
