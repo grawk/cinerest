@@ -13,7 +13,8 @@
 				"246dabad-1c5b-4055-ea53-735cf9ff454e",
 				"c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
 				"4f0ee776-ce73-6717-ceae-7f20989c5e01",
-				"e35a4e85-59b2-4c16-ce21-ad1c42bd8ad6"
+				"e35a4e85-59b2-4c16-ce21-ad1c42bd8ad6",
+				"11f212bc-79b8-a237-df1e-3f84a01af8a5"
 			],
 			"owner": 0,
 			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497"
@@ -24,6 +25,27 @@
 	"remoteLink": "",
 	"public": false,
 	"requests": [
+		{
+			"id": "11f212bc-79b8-a237-df1e-3f84a01af8a5",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{baseUrl}}/movies/{{existingMovieId}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446527907953,
+			"name": "{{baseUrl}}/movies/{{existingMovieId}}",
+			"description": "delete a single movie",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": [],
+			"folder": "c07b5edf-f2c6-8f2d-1620-69240b8ee7f1",
+			"rawModeData": "{\n  \"name\": \"The Last Foo\"\n  }"
+		},
 		{
 			"id": "246dabad-1c5b-4055-ea53-735cf9ff454e",
 			"headers": "",
@@ -90,12 +112,12 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1446441759217,
+			"time": 1446527907953,
 			"name": "{{baseUrl}}/movies/{{existingMovieId}}",
 			"description": "update a single movie",
 			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
 			"responses": [],
-			"rawModeData": "{\n  \"name\": \"Foo\"\n  }"
+			"rawModeData": "{\n  \"name\": \"The Last Foo\"\n  }"
 		},
 		{
 			"id": "c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
