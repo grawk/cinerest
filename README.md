@@ -25,21 +25,31 @@ git clone https://github.com/grawk/cinerest.git && cd cinerest && npm i
 node populate.js
 ```
 
-### Run
+### Run the Express application
 
 ```shell
 npm start
 ```
 
-## GET /api/movies
+## Using postman
+
+Included in the repo is a [postman_collection](cinerest.json.postman_collection) doc. You can import this into Postman 
+and test the endpoints.
+
+In order to use the `{id}` based endpoints, first run the `GET /api/movies` route to get a valid ObjectID. Then supply that 
+into the variable `{{existingMovieId}}`.
+
+## Endpoints
+
+### GET /api/movies
 
 Returns a list of movies in JSON format. List is paginated at six items per page.
 
-### query parameter
+#### query parameter
 
 * **page** (Number): which page of movie results to view
 
-### response
+#### response
 
 ```js
     "MovieList": {
@@ -59,15 +69,15 @@ Returns a list of movies in JSON format. List is paginated at six items per page
     },
 ```
 
-## POST /api/movies
+### POST /api/movies
 
 Add a new movie
 
-### body parameter
+#### body parameter
 
 * **name** (String): Name of movie
 
-### response
+#### response
 
 ```js
 "responses": {
@@ -86,15 +96,15 @@ Add a new movie
 }
 ```
 
-## GET /api/movies/{id}
+### GET /api/movies/{id}
 
 Retrieve a single movie
 
-### path parameter
+#### path parameter
 
 * **id** (MongoDB ObjectID): which movie document you wish to view
 
-### response
+#### response
 
 ```js
     "Movie": {
@@ -129,19 +139,19 @@ Retrieve a single movie
 ```
 
 
-## PUT /api/movies/{id}
+### PUT /api/movies/{id}
 
 Edit a single movie
 
-### path parameter
+#### path parameter
 
 * **id** (MongoDB ObjectID): which movie document you wish to view
 
-### body parameter
+#### body parameter
 
 * **name** (String): Name of movie
 
-### response
+#### response
 
 ```js
 "responses": {
@@ -160,15 +170,15 @@ Edit a single movie
 }
 ```
 
-## DELETE /api/movies/{id}
+### DELETE /api/movies/{id}
 
 Delete a single movie
 
-### path parameter
+#### path parameter
 
 * **id** (MongoDB ObjectID): which movie document you wish to delete
 
-### response
+#### response
 
 ```js
 "responses": {
