@@ -168,47 +168,47 @@
           }
         }
       }
-    }
-  },
-  "/theaters": {
-    "get": {
-      "tags": [
-        "Theaters nearby"
-      ],
-      "parameters": [
-        {
-          "name": "location",
-          "in": "query",
-          "description": "lat/long location",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "name": "radius",
-          "in": "query",
-          "description": "radius in feet around location",
-          "required": false,
-          "type": "integer",
-          "format": "int64"
-        }
-      ],
-      "summary": "finds nearby theaters to a lat/long coordinate",
-      "responses": {
-        "200": {
-          "description": "movie theater response",
-          "schema": {
-            "$ref": "#/definitions/TheaterList"
+    },
+    "/theaters": {
+      "get": {
+        "tags": [
+          "Theaters nearby"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "description": "lat/long location",
+            "required": true,
+            "type": "string"
           },
-          "headers": {
-            "x-expires": {
-              "type": "string"
-            }
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "radius in feet around location",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
           }
-        },
-        "default": {
-          "description": "unexpected error",
-          "schema": {
-            "$ref": "#/definitions/Error"
+        ],
+        "summary": "finds nearby theaters to a lat/long coordinate",
+        "responses": {
+          "200": {
+            "description": "movie theater response",
+            "schema": {
+              "$ref": "#/definitions/TheaterList"
+            },
+            "headers": {
+              "x-expires": {
+                "type": "string"
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
           }
         }
       }
