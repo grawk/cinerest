@@ -13,7 +13,7 @@ var placesargs = {
     }
 };
 // registering remote methods
-client.registerMethod("getPlaces", "https://maps.googleapis.com/maps/api/place/nearbysearch/json", "GET");
+client.registerMethod("getPlaces", "https://maps.googleapis.com/maps/api/place/nearbysearch/json", "DELETE");
 
 client.methods.getPlaces(placesargs, function (data, response) {
     // parsed response body as js object

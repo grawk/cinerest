@@ -201,7 +201,9 @@ Delete a single movie
 
 ### GET /api/theaters
 
-Get a list of theaters within radius of a lat/long, theaters associated with a calculated travel duration
+Get a list of theaters within radius of a lat/long, theaters associated with a calculated travel duration.
+
+Each theater object has its unique_id mapping back to its Google Maps location.
 
 #### query parameters
 
@@ -225,9 +227,21 @@ Get a list of theaters within radius of a lat/long, theaters associated with a c
 
 ```js
 "TheaterList": {
-  "type": "array",
-  "items": {
-    "$ref": "#/definitions/Theater"
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "string"
+    },
+    "radius": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Theater"
+      }
+    }
   }
 },
 "Theater": {
@@ -242,6 +256,9 @@ Get a list of theaters within radius of a lat/long, theaters associated with a c
     "duration": {
       "type": "integer",
       "format": "int64"
+    },
+    "gkey": {
+      "type": "string"
     }
   }
 },

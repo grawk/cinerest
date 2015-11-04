@@ -35,14 +35,18 @@ module.exports = {
             // parsed response body as js object
             var json = JSON.parse(data.toString());
             var theaters = json.results;
+            var resJson = {
+                location: location,
+                radius: radius,
+                list: []
+            };
             var latLongMap = {};
             var latLongArray = [];
-            var responseArray = [];
             theaters.map(function (theater) {
                 var latLongKey = theater.geometry.location.lat + ',' + theater.geometry.location.lng;
                 //theater.geometry.location.{lat|lng}
                 //theater.name
-                latLongMap[latLongKey] = {theater: theater};
+                latLongMap[latLongKey] = theater;
                 latLongArray.push(latLongKey);
             });
             var args = {
@@ -55,17 +59,18 @@ module.exports = {
             client.methods.getDistanceMatrix(args, function (data, response) {
                 var json = JSON.parse(data.toString());
                 //json.rows[0].elements {Array}, one entry per theater
-                latLongArray.map(function (latLongKey) {
-                    latLongMap[latLongKey]['vector'] = json.rows[0].elements.shift();
-                    var combined = latLongMap[latLongKey];
-                    responseArray.push({
-                        name: combined.theater.name,
-                        address: combined.theater.vicinity,
-                        duration: combined.vector.duration.value
-                    });
+                resJson.list = latLongArray.map(function (latLongKey) {
+                    var theater = latLongMap[latLongKey];
+                    var vector = json.rows[0].elements.shift();
+                    return {
+                        name: theater.name,
+                        address: theater.vicinity,
+                        duration: vector.duration.value,
+                        gkey: theater.place_id
+                    };
                 });
 
-                res.status(200).json(responseArray);
+                res.status(200).json(resJson);
             });
 
         });
