@@ -245,7 +245,7 @@
         "address": {
           "type": "string"
         },
-        "distance": {
+        "duration": {
           "type": "integer",
           "format": "int64"
         }

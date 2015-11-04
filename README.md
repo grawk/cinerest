@@ -196,3 +196,51 @@ Delete a single movie
   }
 }
 ```
+
+### GET /api/theaters
+
+Get a list of theaters within radius of a lat/long, theaters associated with a calculated travel duration
+
+#### query parameters
+
+* **location** (String): comma delimited lat/long value, no spaces: e.g. `'37.3782561802915,-121.9214399197085'`
+* **radius** (Number): distance from **location** in which to search
+
+#### responses
+
+```js
+"responses": {
+  "200": {
+    "description": "movie theater response",
+    "schema": {
+      "$ref": "#/definitions/TheaterList"
+    },
+    ...
+}
+```
+
+#### associated definitions
+
+```js
+"TheaterList": {
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Theater"
+  }
+},
+"Theater": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+},
+```
