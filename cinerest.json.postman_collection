@@ -18,6 +18,15 @@
 			],
 			"owner": 0,
 			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497"
+		},
+		{
+			"id": "10f009cb-bbe3-d03b-cf0a-eb9530fbeeaa",
+			"name": "theaters",
+			"description": "Theater operations",
+			"order": [
+				"8d08fc2c-89b4-a8b8-f4f2-9a667f37de1c"
+			],
+			"owner": 0
 		}
 	],
 	"timestamp": 1446399584268,
@@ -118,6 +127,25 @@
 			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
 			"responses": [],
 			"rawModeData": "{\n  \"name\": \"The Last Foo\"\n  }"
+		},
+		{
+			"id": "8d08fc2c-89b4-a8b8-f4f2-9a667f37de1c",
+			"headers": "",
+			"url": "{{baseUrl}}/theaters?location={{latLongSJN}}&radius=15000",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446615667991,
+			"name": "GET theater list",
+			"description": "get the geo-corrected theaters list",
+			"collectionId": "0273c213-96d6-8958-3d4f-17bb6538d497",
+			"responses": []
 		},
 		{
 			"id": "c6637c36-59c8-661c-a0bb-4e71c6c6a2a8",
