@@ -205,6 +205,8 @@ Get a list of theaters within radius of a lat/long, theaters associated with a c
 
 Each theater object has its unique_id mapping back to its Google Maps location.
 
+The theater array is sorted in order of travel duration from least to greatest.
+
 #### query parameters
 
 * **location** (String): comma delimited lat/long value, no spaces: e.g. `'37.3782561802915,-121.9214399197085'`

@@ -69,7 +69,15 @@ module.exports = {
                         gkey: theater.place_id
                     };
                 });
-
+                resJson.list.sort(function compare(a, b) {
+                    if (a.duration < b.duration) {
+                        return -1;
+                    }
+                    else if (a.duration > b.duration) {
+                        return 1;
+                    }
+                    return 0;
+                });
                 res.status(200).json(resJson);
             });
 
