@@ -23,6 +23,16 @@
         "tags": [
           "Movie Operations"
         ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "ID of movie to fetch",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
         "summary": "finds movies in the system",
         "responses": {
           "200": {
@@ -85,7 +95,6 @@
             "description": "ID of movie to fetch",
             "required": true,
             "type": "string"
-            
           }
         ],
         "responses": {
@@ -161,6 +170,50 @@
       }
     }
   },
+  "/theaters": {
+    "get": {
+      "tags": [
+        "Theaters nearby"
+      ],
+      "parameters": [
+        {
+          "name": "location",
+          "in": "query",
+          "description": "lat/long location",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "radius",
+          "in": "query",
+          "description": "radius in feet around location",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }
+      ],
+      "summary": "finds nearby theaters to a lat/long coordinate",
+      "responses": {
+        "200": {
+          "description": "movie theater response",
+          "schema": {
+            "$ref": "#/definitions/TheaterList"
+          },
+          "headers": {
+            "x-expires": {
+              "type": "string"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
   "definitions": {
     "MovieList": {
       "type": "object",
@@ -174,6 +227,27 @@
           "items": {
             "$ref": "#/definitions/Movie"
           }
+        }
+      }
+    },
+    "TheaterList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Theater"
+      }
+    },
+    "Theater": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "distance": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
