@@ -10,6 +10,8 @@ Note that documentation of responses below is copied from the JSON swagger spec,
 
 * mongodb server running on localhost, default port
 * node.js installed (>= v0.12.5)
+* set a valid Google Maps API key to an environment variable: `gmapskey`
+* make sure the Google Maps API key is authorized to access the "Distance Matrix" and "Places" API Web Services
 
 ## Install and run
 
